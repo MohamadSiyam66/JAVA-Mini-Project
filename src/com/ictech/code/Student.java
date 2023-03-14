@@ -2,7 +2,7 @@ package com.ictech.code;
 
 import javax.swing.*;
 
-public class Student {
+public class Student extends JFrame{
     private JPanel stdPanel;
     private JTabbedPane tbbPaneStudent;
     private JTextField textField1;
