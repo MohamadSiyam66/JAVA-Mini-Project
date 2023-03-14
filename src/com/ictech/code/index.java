@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class index extends JFrame{
-    private JPanel indexPanel;
+    public JPanel indexPanel;
     private JLabel lblProfile;
     private JButton btnStudent;
     private JButton btnLecturer;
@@ -13,6 +13,7 @@ public class index extends JFrame{
     private JButton btnAdmin;
     private JButton btnNotices;
     private JLabel lblGrp7;
+    private JLabel lbluor;
 
     public index() {
 
