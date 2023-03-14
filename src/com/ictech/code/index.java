@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class index {
+public class index extends JFrame {
     private JPanel indexPanel;
     private JLabel lblProfile;
     private JButton btnStudent;
