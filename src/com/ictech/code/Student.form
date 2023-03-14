@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.ictech.code.Student">
+  <grid id="27dc6" binding="stdPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="766" height="468"/>
+    </constraints>
+    <properties>
+      <background color="-10198661"/>
+    </properties>
+    <border type="line" title="LMS - FOT - RUHUNA" title-position="1">
+      <font name="Comic Sans MS" size="16" style="1"/>
+      <title-color color="-15594114"/>
+    </border>
+    <children>
+      <tabbedpane id="27ac8" binding="tbbPaneStudent">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="300"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-11644589"/>
+          <tabPlacement value="2"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="89e6d" binding="tbbProfile" layout-manager="GridLayoutManager" row-count="2" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Profile"/>
+            </constraints>
+            <properties>
+              <background color="-5968709"/>
+            </properties>
+            <border type="none" title="Student Profile Page" title-justification="2">
+              <font name="HoloLens MDL2 Assets" size="12" style="1"/>
+            </border>
+            <children>
+              <component id="3c7ce" class="javax.swing.JLabel" binding="lblstdName">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <foreground color="-16777216"/>
+                  <text value="Name: "/>
+                </properties>
+              </component>
+              <component id="2d002" class="javax.swing.JTextField" binding="txtStdName">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="21147" class="javax.swing.JLabel" binding="lblstdConatct">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <foreground color="-16777216"/>
+                  <text value="Contact No: "/>
+                </properties>
+              </component>
+              <component id="a6113" class="javax.swing.JTextField" binding="txtstdContact">
+                <constraints>
+                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="76e4d" class="javax.swing.JButton" binding="btnUpdate">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-815"/>
+                  <text value="UPDATE DETAILS"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="f3f77" binding="tbbAttendence" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Attendence"/>
+            </constraints>
+            <properties>
+              <background color="-7630185"/>
+            </properties>
+            <border type="none" title="Attendence Page" title-justification="2"/>
+            <children/>
+          </grid>
+          <grid id="bb3d1" binding="tbbMedical" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Medical"/>
+            </constraints>
+            <properties>
+              <background color="-7630185"/>
+            </properties>
+            <border type="none" title="Medical Page" title-justification="2"/>
+            <children/>
+          </grid>
+          <grid id="460a4" binding="tbbCourse" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Course"/>
+            </constraints>
+            <properties>
+              <background color="-7630185"/>
+            </properties>
+            <border type="none" title="Course Page" title-justification="2"/>
+            <children/>
+          </grid>
+          <grid id="c758c" binding="tbbTimeTable" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Time Table"/>
+            </constraints>
+            <properties>
+              <background color="-7630185"/>
+            </properties>
+            <border type="none" title="Time Table" title-justification="2"/>
+            <children/>
+          </grid>
+        </children>
+      </tabbedpane>
+      <component id="26e10" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <dropMode value="INSERT"/>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <font name="Fira Code" size="12" style="1"/>
+        </properties>
+      </component>
+      <hspacer id="e2712">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="8cfbc">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="b115e" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="CREATED BY: GROUP 07 DEPT OF ICT"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
