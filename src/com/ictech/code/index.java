@@ -8,13 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.*;
 
-<<<<<<< HEAD
-public class index extends JFrame {
-    private JPanel indexPanel;
-=======
 public class index extends JFrame{
     public JPanel indexPanel;
->>>>>>> cf19c96a1ff49a4e3ab0b08a510442cdda5320df
     private JLabel lblProfile;
     private JButton btnStudent;
     private JButton btnLecturer;
@@ -30,6 +25,7 @@ public class index extends JFrame{
     btnStudent.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
+
             JOptionPane.showMessageDialog(null,"Login to Student");
         }
     });

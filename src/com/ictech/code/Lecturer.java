@@ -2,7 +2,7 @@ package com.ictech.code;
 
 import javax.swing.*;
 
-public class Lecturer extends JFrame {
+public class Lecturer extends JFrame{
     private JPanel PanelLecturer;
     private JTextField txtLecturerName;
     private JTabbedPane LecturerPane;
@@ -17,6 +17,4 @@ public class Lecturer extends JFrame {
     private JPanel tbbAttendace;
     private JPanel tbbMedcal;
     private JLabel lblgrp7;
-    private JButton button1;
 }
-

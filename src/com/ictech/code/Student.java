@@ -2,7 +2,7 @@ package com.ictech.code;
 
 import javax.swing.*;
 
-public class Student extends JFrame{
+public class Student<fname, lname> extends JFrame{
     private JPanel stdPanel;
     private JTabbedPane tbbPaneStudent;
     private JTextField textField1;
@@ -16,6 +16,17 @@ public class Student extends JFrame{
     private JTextField txtstdContact;
     private JLabel lblstdConatct;
     private JButton btnUpdate;
+
+    public String fname;
+    public String lname;
+    public String email;
+    public String phn;
+    public String dob;
+    public String stdid;
+    public String sex;
+    public String pw;
+    public String cpw;
+
 
 
     public static void main(String[] args) {
