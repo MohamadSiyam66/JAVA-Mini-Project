@@ -21,6 +21,13 @@ public class Lecturer extends JFrame{
     private JPanel tbbMedcal;
     private JLabel lblgrp7;
     private JTable tablee1;
+    private JTabbedPane tabbedPane1;
+    private JTextField textField1;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JTextField textField4;
+    private JButton updateButton;
+    private JLabel lecId;
 
     Connection con;
     PreparedStatement pst;
@@ -35,12 +42,26 @@ public class Lecturer extends JFrame{
          //   }
         //});
     }
+// !!! Again try one
+    public void lacture_details(){
+        try{
+            pst = con.prepareStatement("SELECT Lec_id FROM lecturer");
+            ResultSet lecId = pst.executeQuery();
+            lecId.next();
+        }
+
+        catch(SQLException e){
+
+        }
+
+
+    }
 
     public void table_load(){
         try{
         pst = con.prepareStatement("SELECT * FROM student");
-        ResultSet rs = pst.executeQuery();
-        tablee1.setModel(DbUtils.resultSetToTableModel(rs));
+        ResultSet st_tab = pst.executeQuery();
+        tablee1.setModel(DbUtils.resultSetToTableModel(st_tab));
         }
 
         catch (SQLException e){

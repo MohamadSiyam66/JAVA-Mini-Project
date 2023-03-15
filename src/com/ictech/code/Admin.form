@@ -147,7 +147,9 @@
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <text value=""/>
+                </properties>
               </component>
               <component id="d4332" class="javax.swing.JButton" default-binding="true">
                 <constraints>
