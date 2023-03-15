@@ -3,8 +3,6 @@ package com.ictech.code;
 import net.proteanit.sql.DbUtils;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.*;
 
 public class Lecturer extends JFrame{
@@ -23,20 +21,19 @@ public class Lecturer extends JFrame{
     private JPanel tbbMedcal;
     private JLabel lblgrp7;
     private JTable tablee1;
-    private JButton stud1;
 
     Connection con;
     PreparedStatement pst;
 
-    public Lecturer() {
+    public  Lecturer() {
         connect();
         table_load();
-        stud1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        //stud1.addActionListener(new ActionListener() {
+          //  @Override
+          //  public void actionPerformed(ActionEvent e) {
 
-            }
-        });
+         //   }
+        //});
     }
 
     public void table_load(){
@@ -77,9 +74,7 @@ public class Lecturer extends JFrame{
 }
 
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
+
 }
 
 
