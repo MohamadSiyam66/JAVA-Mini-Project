@@ -3,13 +3,16 @@ package com.ictech.code;
 import net.proteanit.sql.DbUtils;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.sql.*;
 
 public class Lecturer extends JFrame{
     private JPanel PanelLecturer;
-    private JTextField txtLecturerName;
     private JTabbedPane LecturerPane;
     private JPanel tbbProfle;
     private JPanel tbbAddMaterals;
@@ -26,7 +29,7 @@ public class Lecturer extends JFrame{
     private JTabbedPane tabbedPane1;
     private JTextField firstname;
     private JTextField lastname;
-    private JTextField email;
+    private JTextField emBox;
     private JTextField Date_of_Birth;
     private JButton updateButton;
     private JLabel lecId;
@@ -63,14 +66,35 @@ public class Lecturer extends JFrame{
     private JTextField textStudId;
     private JPanel lId;
     private JLabel detLecId;
+    private JTable tabCaMarks;
+    private JLabel ffName;
+    private JLabel eMail;
+    private JLabel pNumber;
+    private JLabel llName;
+    private JTextField textLecPho;
+    private JLabel lecDOB;
+    private JTextField textAddMat;
+    private JComboBox comboCourseCod;
+    private JButton browserButton;
+    private JTextField txtLectureId;
+    private JButton addButton;
+    private JLabel txtDes;
+    private JTextArea textDesArea;
+    private JTable tableNotice;
+    private JScrollPane CA;
 
     Connection con;
+    String s;
     PreparedStatement pst;
 
     public  Lecturer() {
         connect();
         table_load();
         show_marks();
+        lacture_details();
+        show_CAmarks();
+        lactureShowDetailsShows();
+        //noticeTableShow();
         //stud1.addActionListener(new ActionListener() {
           //  @Override
           //  public void actionPerformed(ActionEvent e) {
@@ -85,7 +109,7 @@ public class Lecturer extends JFrame{
 
                 String fName = firstname.getText();
                 String lName = lastname.getText();
-                String e_mail = email.getText();
+                String e_mail = emBox.getText();
                 String DOB = Date_of_Birth.getText();
                 //String lecId = String.valueOf(2);
 
@@ -102,7 +126,7 @@ public class Lecturer extends JFrame{
                     table_load();
                     firstname.setText("");
                     lastname.setText("");
-                    email.setText("");
+                    emBox.setText("");
                     Date_of_Birth.setText("");
                     firstname.requestFocus();
 
@@ -128,19 +152,17 @@ public class Lecturer extends JFrame{
 
                 if(quizMarks == "Quiz01"){
                     try {
-                        String sql;
-                        sql = "INSERT INTO marks(Course_code,Std_id,Quiz01)" +
-                                "VALUES(?,?,?)";
-                        pst = con.prepareStatement(sql);
-                       // pst.setString(1,studentID);
-                        pst.setString(1, subCode);
+
+                        pst = con.prepareStatement("UPDATE marks set Quiz01= ? where Std_id = ? && Course_code = ? ");
+                        pst.setString(1,qMarks);
                         pst.setString(2,studentID);
-                        pst.setString(3,qMarks);
+                        pst.setString(3,subCode);
 
 
                         pst.executeUpdate();
 
                         JOptionPane.showMessageDialog(null,"Quiz01 Marks Uploaded..!!!");
+                        show_CAmarks();
                         stuId.setText("");
                         mak.setText("");
                         stuId.requestFocus();
@@ -159,19 +181,16 @@ public class Lecturer extends JFrame{
 
                     try {
 
-                        String sql;
-                        sql = "INSERT INTO marks(Course_code,Std_id,Quiz02)" +
-                                "VALUES(?,?,?)";
-                        pst = con.prepareStatement(sql);
-
-                        pst.setString(1, subCode);
+                        pst = con.prepareStatement("UPDATE marks set Quiz02= ? where Std_id = ? && Course_code = ? ");
+                        pst.setString(1,qMarks);
                         pst.setString(2,studentID);
-                        pst.setString(3,qMarks );
+                        pst.setString(3,subCode);
 
 
                         pst.executeUpdate();
 
                         JOptionPane.showMessageDialog(null,"Quiz02 Marks Uploaded..!!!");
+                        show_CAmarks();
                         stuId.setText("");
                         mak.setText("");
                         stuId.requestFocus();
@@ -188,19 +207,17 @@ public class Lecturer extends JFrame{
                 } else if (quizMarks == "Quiz03") {
 
                     try {
-                        String sql;
-                        sql = "INSERT INTO marks(Course_code,Std_id,Quiz03)" +
-                                "VALUES(?,?,?)";
-                        pst = con.prepareStatement(sql);
 
-                        pst.setString(1, subCode);
+                        pst = con.prepareStatement("UPDATE marks set Quiz03= ? where Std_id = ? && Course_code = ? ");
+                        pst.setString(1,qMarks);
                         pst.setString(2,studentID);
-                        pst.setString(3,qMarks );
+                        pst.setString(3,subCode);
 
 
                         pst.executeUpdate();
 
                         JOptionPane.showMessageDialog(null,"Quiz03 Marks Uploaded..!!!");
+                        show_CAmarks();
                         stuId.setText("");
                         mak.setText("");
                         stuId.requestFocus();
@@ -217,19 +234,17 @@ public class Lecturer extends JFrame{
                 else {
                     if(subCode == "ICT02"){
                         try {
-                            String sql;
-                            sql = "INSERT INTO marks(Course_code,Std_id,Quiz04)" +
-                                    "VALUES(?,?,?)";
-                            pst = con.prepareStatement(sql);
 
-                            pst.setString(1, subCode);
+                            pst = con.prepareStatement("UPDATE marks set Quiz04= ? where Std_id = ? && Course_code = ? ");
+                            pst.setString(1,qMarks);
                             pst.setString(2,studentID);
-                            pst.setString(3,qMarks );
+                            pst.setString(3,subCode);
 
 
                             pst.executeUpdate();
 
                             JOptionPane.showMessageDialog(null,"Quiz04 Marks Uploaded..!!!");
+                            show_CAmarks();
                             table_load();
                             stuId.setText("");
                             mak.setText("");
@@ -260,19 +275,24 @@ public class Lecturer extends JFrame{
                 if(subCode != "ICT01"){
                     if(asseSele == "Assessments01"){
                         try {
+                            /*
                             String sql;
                             sql = "INSERT INTO marks(Course_code,Std_id,Assesment01)" +
                                     "VALUES(?,?,?)";
                             pst = con.prepareStatement(sql);
 
-                            pst.setString(1, subCode);
-                            pst.setString(2,stuId);
-                            pst.setString(3,assesMarks);
+                             */
+                            pst = con.prepareStatement("UPDATE marks set Assesment01= ? where Std_id = ? && Course_code = ? ");
+                            pst.setString(1,assesMarks);
+                            pst.setString(2, subCode);
+                            pst.setString(3,stuId);
+
 
 
                             pst.executeUpdate();
 
                             JOptionPane.showMessageDialog(null,"Assessment01 Marks Uploaded..!!!");
+                            show_CAmarks();
                             textStudId.setText("");
                             textAssesMarks.setText("");
                             textStudId.requestFocus();
@@ -288,19 +308,15 @@ public class Lecturer extends JFrame{
 
                     } else if (asseSele == "Assessments02") {
                         try {
-                            String sql;
-                            sql = "INSERT INTO marks(Course_code,Std_id,Assesment02)" +
-                                    "VALUES(?,?,?)";
-                            pst = con.prepareStatement(sql);
-                            // pst.setString(1,studentID);
-                            pst.setString(1, subCode);
-                            pst.setString(2,stuId);
-                            pst.setString(3,assesMarks);
-
+                            pst = con.prepareStatement("UPDATE marks set Assesment02= ? where Std_id = ? && Course_code = ? ");
+                            pst.setString(1,assesMarks);
+                            pst.setString(2, subCode);
+                            pst.setString(3,stuId);
 
                             pst.executeUpdate();
 
                             JOptionPane.showMessageDialog(null,"Assessment02 Marks Uploaded..!!!");
+                            show_CAmarks();
                             textStudId.setText("");
                             textAssesMarks.setText("");
                             textStudId.requestFocus();
@@ -336,14 +352,17 @@ public class Lecturer extends JFrame{
 
                 if(subCode != "ICT03"){
                     try{
-                        String sql ;
+                       /* String sql ;
                         sql = "INSERT INTO marks(Course_code,Std_id,Mid_term)" +
                                 "VALUES(?,?,?)";
                         pst = con.prepareStatement(sql);
 
-                        pst.setString(1,subCode);
-                        pst.setString(2,studId);
-                        pst.setString(3,midMark);
+                        */
+
+                        pst = con.prepareStatement("UPDATE marks set Mid_term= ? where Std_id = ? && Course_code = ? ");
+                        pst.setString(1,midMark);
+                        pst.setString(2, subCode);
+                        pst.setString(3,studId);
 
                         pst.executeUpdate();
                         JOptionPane.showMessageDialog(null,"Mid_term Marks Uploaded..!!!");
@@ -371,17 +390,13 @@ public class Lecturer extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String subCode = (String) finTheo.getSelectedItem();
                 String studId = theStudId.getText();
-                String midMark = therMarks.getText();
+                String finMark = therMarks.getText();
 
                     try{
-                        String sql ;
-                        sql = "INSERT INTO marks(Course_code,Std_id,Final_theory)" +
-                                "VALUES(?,?,?)";
-                        pst = con.prepareStatement(sql);
-
-                        pst.setString(1,subCode);
-                        pst.setString(2,studId);
-                        pst.setString(3,midMark);
+                        pst = con.prepareStatement("UPDATE marks set Final_theory= ? where Std_id = ? && Course_code = ? ");
+                        pst.setString(1,finMark);
+                        pst.setString(2, subCode);
+                        pst.setString(3,studId);
 
                         pst.executeUpdate();
                         JOptionPane.showMessageDialog(null,"Final  Marks Uploaded..!!!");
@@ -403,18 +418,15 @@ public class Lecturer extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String subCode = (String) finPracSubCod.getSelectedItem();
                 String studId = finalStudId.getText();
-                String midMark = finalMarks.getText();
+                String finMark = finalMarks.getText();
 
                 if (subCode != "ICT02"){
                     try{
-                        String sql ;
-                        sql = "INSERT INTO marks(Course_code,Std_id,Final_practical)" +
-                                "VALUES(?,?,?)";
-                        pst = con.prepareStatement(sql);
+                        pst = con.prepareStatement("UPDATE marks set Final_practical= ? where Std_id = ? && Course_code = ? ");
+                        pst.setString(1,finMark);
+                        pst.setString(2, subCode);
+                        pst.setString(3,studId);
 
-                        pst.setString(1,subCode);
-                        pst.setString(2,studId);
-                        pst.setString(3,midMark);
 
                         pst.executeUpdate();
                         JOptionPane.showMessageDialog(null,"Final Practical Marks Uploaded..!!!");
@@ -434,6 +446,105 @@ public class Lecturer extends JFrame{
 
             }
         });
+
+        // Browser File select..
+        browserButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+                FileNameExtensionFilter filter = new FileNameExtensionFilter("*.IMAGE,*.PDF","jpg","gif","png","txt","pdf");
+                fileChooser.addChoosableFileFilter(filter);
+                int result = fileChooser.showSaveDialog(null);
+
+                if(result == JFileChooser.APPROVE_OPTION){
+                    File selectedFile;
+                    selectedFile = fileChooser.getSelectedFile();
+                    String path = selectedFile.getAbsolutePath();
+                    s=path;
+                    textAddMat.setText(s);
+                }
+
+                else if (result == JFileChooser.CANCEL_OPTION){
+                    JOptionPane.showMessageDialog(null,"No Data");
+                }
+            }
+        });
+
+        //Add materials.....
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    String LecId = txtLectureId.getText();
+                    String subCode = (String) comboCourseCod.getSelectedItem();
+                    String des = textDesArea.getText();
+
+
+                    pst = con.prepareStatement("INSERT INTO addmetrialsdetails(Lec_id,Course_Code,Description,Matrial)"+ "Value(?,?,?,?)");
+                    InputStream is = new FileInputStream(new File(s));
+                    pst.setString(1,LecId);
+                    pst.setString(2,subCode);
+                    pst.setString(3,des);
+                    pst.setBlob(4,is);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null,"Data Insert....");
+                }
+
+                catch(Exception ex){
+                    ex.printStackTrace();
+                }
+
+
+            }
+        });
+
+        //Quiz01 Clear..
+        clearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                stuId.setText("");
+                mak.setText("");
+                stuId.requestFocus();
+            }
+        });
+
+        //Assessment Clear..
+        clearButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textStudId.setText("");
+                textAssesMarks.setText("");
+                textStudId.requestFocus();
+            }
+        });
+        //mid Marks cleaner...
+        clearButton2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtStuId.setText("");
+                textMidMaark.setText("");
+                txtStuId.requestFocus();
+            }
+        });
+        clearButton3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                theStudId.setText("");
+                therMarks.setText("");
+                theStudId.requestFocus();
+            }
+        });
+        clearButton4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                finalStudId.setText("");
+                finalMarks.setText("");
+                finalStudId.requestFocus();
+            }
+        });
     }
 
 
@@ -443,6 +554,19 @@ public class Lecturer extends JFrame{
         pst = con.prepareStatement("SELECT * FROM student");
         ResultSet stud_tab = pst.executeQuery();
         tablee1.setModel(DbUtils.resultSetToTableModel(stud_tab));
+        }
+
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    // CA Marks Show...
+    public void show_CAmarks(){
+        try{
+            pst = con.prepareStatement("SELECT Std_id,Course_code,Assesment01,Assesment02,Quiz01,Quiz02,Quiz03,Quiz04 FROM marks");
+            ResultSet caMarks_tab = pst.executeQuery();
+            tabCaMarks.setModel(DbUtils.resultSetToTableModel(caMarks_tab));
         }
 
         catch (SQLException e){
@@ -491,26 +615,121 @@ public class Lecturer extends JFrame{
         }
 }
 
-    // !!! Again try one
+    // Lecture Details Shows...
     public void lacture_details(){
         try{
-            pst = con.prepareStatement("SELECT Fname FROM lecturer WHERE Lec_id = 2 ");
-            ResultSet lecId = pst.executeQuery();
-            detLecId.setText("Your name is : "+lecId);
+            pst = con.prepareStatement("SELECT Lec_id,Fname,Lname,DOB,Email,Pno FROM lecturer WHERE Lec_id = 4");
+            ResultSet lectDetails = pst.executeQuery();
+
+            if(lectDetails.next() == true){
+                String lecId = lectDetails.getString(1);
+                String fName = lectDetails.getString(2);
+                String lName = lectDetails.getString(3);
+                String dob = lectDetails.getString(4);
+                String email = lectDetails.getString(5);
+                String no = lectDetails.getString(6);
+
+                detLecId.setText("Lecture ID : " + lecId);
+                ffName.setText("First Name : " +fName);
+                llName.setText("Last Name : " + lName);
+                lecDOB.setText("Date of Birth : " + dob);
+                eMail.setText("E-Mail Address : " + email);
+                pNumber.setText("Phone No : "+ no);
+            }
 
 
         }
 
         catch(SQLException e){
+            e.printStackTrace();
 
         }
 
 
     }
 
+    //Lecture Update Details shows...
+    public void lactureShowDetailsShows(){
+       // String userName = String.valueOf(2);
+
+        try {
+            pst = con.prepareStatement("SELECT Fname,Lname,Email,DOB,Pno FROM lecturer WHERE Lec_id = 4");
+           // pst.setString(1, userName);
+            ResultSet leDetails = pst.executeQuery();
+
+            if (leDetails.next() == true) {
+                String fName = leDetails.getString(1);
+                String lName = leDetails.getString(2);
+                String email = leDetails.getString(3);
+                String dob = leDetails.getString(4);
+                String pNo = leDetails.getString(5);
+
+                firstname.setText(fName);
+                lastname.setText(lName);
+                emBox.setText(email);
+                Date_of_Birth.setText(dob);
+                textLecPho.setText(pNo);
 
 
-}
+
+            } else {
+                firstname.setText("");
+                lastname.setText("");
+                emBox.setText("");
+                Date_of_Birth.setText("");
+                textLecPho.setText("");
+                firstname.requestFocus();
+
+            }
+            lacture_details();
+        }
+
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        }
+
+      //  Notice Table Show..
+    /*
+
+    public void noticeTableShow(){
+        try{
+            pst = con.prepareStatement("SELECT Notice_no,Details,Ndate,Description FROM notice ");
+            ResultSet noticeTable = pst.executeQuery();
+            tableNotice.setModel(DbUtils.resultSetToTableModel(noticeTable));
+        }
+
+        catch(SQLException e1){
+            e1.printStackTrace();
+        }
+
+
+    }
+
+
+        //CA Quiz Calculate...
+/*
+    public void quizMarksCalculate(){
+        try{
+            pst = con.prepareStatement("SELECT Std_id,(100/Mid_term)*20 AS QuizTotel from marks;");
+            ResultSet caTab = pst.executeQuery();
+            tableCa.setModel(DbUtils.resultSetToTableModel(caTab));
+        }
+
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+ */
+
+
+    }
+
+
+
+
+
 
 
 
