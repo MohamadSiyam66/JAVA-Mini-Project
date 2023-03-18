@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53451e21-3079-4d31-931e-3f80ee2e9159" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-j-8.0.32.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/rs2xml.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ictech/code/Admin.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ictech/code/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ictech/code/Lecturer.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ictech/code/Lecturer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ictech/code/Student.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ictech/code/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ictech/code/TechnicalOfficer.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ictech/code/TechnicalOfficer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ictech/code/index.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ictech/code/index.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JAVA Mini Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JAVA Mini Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +41,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;243&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/MHMD_SIYAM/Desktop/JAVA Mini Project/lib/rs2xml.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MHMD_SIYAM/Desktop/JAVA Mini Project&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -81,6 +68,9 @@
       <workItem from="1678773488047" duration="768000" />
       <workItem from="1678778041522" duration="11863000" />
       <workItem from="1678805407118" duration="2129000" />
+      <workItem from="1678905615629" duration="678000" />
+      <workItem from="1678906638927" duration="60000" />
+      <workItem from="1678941155495" duration="28000" />
     </task>
     <servers />
   </component>
