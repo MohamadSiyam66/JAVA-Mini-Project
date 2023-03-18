@@ -79,6 +79,7 @@
         </constraints>
         <properties>
           <background color="-5124650"/>
+          <font name="Segoe UI Semibold" size="12" style="1"/>
         </properties>
       </component>
       <component id="e7717" class="javax.swing.JTextField" binding="txtLName">
@@ -89,6 +90,7 @@
         </constraints>
         <properties>
           <background color="-5124650"/>
+          <font name="Segoe UI Semibold" size="12" style="1"/>
         </properties>
       </component>
       <component id="fc7a7" class="javax.swing.JTextField" binding="txtxDOB">
@@ -99,6 +101,7 @@
         </constraints>
         <properties>
           <background color="-5124650"/>
+          <font name="Segoe UI Semibold" size="12" style="1"/>
         </properties>
       </component>
       <component id="7fb9b" class="javax.swing.JTextField" binding="txtPhnno">
@@ -109,6 +112,7 @@
         </constraints>
         <properties>
           <background color="-5124650"/>
+          <font name="Segoe UI Semibold" size="12" style="1"/>
         </properties>
       </component>
       <component id="1483f" class="javax.swing.JTextField" binding="txtEmail">
@@ -119,9 +123,10 @@
         </constraints>
         <properties>
           <background color="-5124650"/>
+          <font name="Segoe UI Semibold" size="12" style="1"/>
         </properties>
       </component>
-      <component id="281a6" class="javax.swing.JLabel" binding="txtpw">
+      <component id="281a6" class="javax.swing.JLabel" binding="lblpw">
         <constraints>
           <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
         </constraints>
@@ -131,7 +136,7 @@
           <text value="Password"/>
         </properties>
       </component>
-      <component id="528ee" class="javax.swing.JPasswordField" binding="lblcpw">
+      <component id="528ee" class="javax.swing.JPasswordField" binding="txtpw">
         <constraints>
           <grid row="10" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="3" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -139,6 +144,7 @@
         </constraints>
         <properties>
           <background color="-5124650"/>
+          <font name="Segoe UI Semibold" size="12" style="1"/>
         </properties>
       </component>
       <component id="6fd49" class="javax.swing.JLabel" binding="lblStdid">
@@ -168,6 +174,7 @@
         </constraints>
         <properties>
           <background color="-5124650"/>
+          <font name="Segoe UI Semibold" size="12" style="1"/>
         </properties>
       </component>
       <vspacer id="f0f5a">
@@ -244,16 +251,6 @@
           <text value="Register"/>
         </properties>
       </component>
-      <component id="745cd" class="javax.swing.JTextField" binding="txtsex">
-        <constraints>
-          <grid row="7" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="3" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-5124650"/>
-        </properties>
-      </component>
       <component id="2e22a" class="javax.swing.JLabel" binding="lblSex">
         <constraints>
           <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
@@ -264,7 +261,7 @@
           <text value="Sex"/>
         </properties>
       </component>
-      <component id="bc946" class="javax.swing.JLabel">
+      <component id="e5b91" class="javax.swing.JLabel" binding="lblconfirmpw">
         <constraints>
           <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
         </constraints>
@@ -274,7 +271,7 @@
           <text value="Confirm Password"/>
         </properties>
       </component>
-      <component id="46e1" class="javax.swing.JPasswordField" binding="txtconfirmpw">
+      <component id="8f61e" class="javax.swing.JPasswordField" binding="txtconfirmpw">
         <constraints>
           <grid row="11" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="3" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -282,6 +279,18 @@
         </constraints>
         <properties>
           <background color="-5124650"/>
+          <font name="Segoe UI Semibold" size="12" style="1"/>
+        </properties>
+      </component>
+      <component id="800dc" class="javax.swing.JComboBox" binding="lblsex">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="3" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="m"/>
+            <item value="f"/>
+          </model>
         </properties>
       </component>
     </children>

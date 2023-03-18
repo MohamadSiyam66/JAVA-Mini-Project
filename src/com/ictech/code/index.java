@@ -21,7 +21,6 @@ public class index extends JFrame{
 
     public index()
     {
-
     btnStudent.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -52,9 +51,10 @@ public class index extends JFrame{
         JFrame frame = new JFrame("index");
         frame.setContentPane(new index().indexPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setMinimumSize(new Dimension(1000,700));
+        frame.setTitle("Welcome To learning Management System Unversity of Ruhuna");
         frame.pack();
         frame.setVisible(true);
-
         //DB CONNECTION
         Connection con;
         PreparedStatement pst;
@@ -69,5 +69,4 @@ public class index extends JFrame{
             e.printStackTrace();
         }
     }
-
 }
