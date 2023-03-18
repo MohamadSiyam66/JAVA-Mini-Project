@@ -10,12 +10,10 @@ import java.sql.*;
 
 public class index extends JFrame{
     public JPanel indexPanel;
-    private JLabel lblProfile;
     private JButton btnStudent;
     private JButton btnLecturer;
     private JButton btnTechnicalOfficer;
     private JButton btnAdmin;
-    private JButton btnNotices;
     private JLabel lblGrp7;
     private JLabel lbluor;
 

@@ -10,7 +10,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.*;
 
-public class Admin extends StdRegistration {
+public class Admin {
     private JPanel Adminpanel;
     private JTextField txtAdminname;
     private JTabbedPane tbbAdminPane;
