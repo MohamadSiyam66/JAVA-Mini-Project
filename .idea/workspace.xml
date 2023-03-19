@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53451e21-3079-4d31-931e-3f80ee2e9159" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4a9879ef-ae84-4012-94e8-9e0787fd6318.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4a9879ef-ae84-4012-94e8-9e0787fd6318.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JAVA Mini Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JAVA Mini Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ictech/code/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ictech/code/Admin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +41,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "177",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "1",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/MHMD_SIYAM/Desktop/JAVA/JAVA-Mini-Project/lib/mysql-connector-j-8.0.32.jar",
     "node.js.detected.package.eslint": "true",
@@ -50,6 +51,11 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -126,9 +132,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Admin" />
+        <item itemvalue="Application.index" />
         <item itemvalue="Application.Admin (2)" />
         <item itemvalue="Application.Admin (1)" />
-        <item itemvalue="Application.index" />
         <item itemvalue="Application.Lecturer" />
       </list>
     </recent_temporary>
@@ -152,7 +158,10 @@
       <workItem from="1679175206159" duration="1639000" />
       <workItem from="1679178730963" duration="872000" />
       <workItem from="1679179674371" duration="23000" />
-      <workItem from="1679182039889" duration="271000" />
+      <workItem from="1679182039889" duration="484000" />
+      <workItem from="1679202656115" duration="2505000" />
+      <workItem from="1679233440341" duration="3319000" />
+      <workItem from="1679238512800" duration="3628000" />
     </task>
     <servers />
   </component>

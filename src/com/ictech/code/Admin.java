@@ -485,58 +485,6 @@ public class Admin {
         tableETl4s2_load();
         tableETl4s1_load();
 
-        //-----------------------------STARNG USER MANTAN-------------------------------------
-        //REGISTER BTN FOR ADMIN
-        btnregistreA.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String ad_id, pno, password, fname, lname, sex, dob, email;
-
-                ad_id = txtadmid.getText();
-                pno = txtphnA.getText();
-                password = txtpwA.getText();
-                fname = txtfnameA.getText();
-                lname = txtlnameA.getText();
-                sex = (String) txtgenderL.getSelectedItem();
-                dob = txtdobA.getText();
-                email = txtemailA.getText();
-
-                try {
-                    //Connection con = DriverManager.getConnection(DB_URL, USERNAME,PASSWORD);
-                    //DB CONNECTED SUCCESSFULLY
-                    String sql;
-                    sql = "INSERT INTO Admin(ad_id,pno,password,fname,lname,sex,dob,email)" +
-                            "VALUES(?,?,?,?,?,?,?,?)";
-                    pst = con.prepareStatement(sql);
-
-                    //PreparedStatement pst = con.prepareStatement(sql);
-                    pst.setString(1, ad_id);
-                    pst.setString(2, pno);
-                    pst.setString(3, password);
-                    pst.setString(4, fname);
-                    pst.setString(5, lname);
-                    pst.setString(6, sex);
-                    pst.setString(7, dob);
-                    pst.setString(8, email);
-                    pst.executeUpdate();
-                    JOptionPane.showMessageDialog(null, "Record Added!!!");
-                    table_load();
-                    txtadmid.setText("");
-                    txtphnA.setText("");
-                    txtpwA.setText("");
-                    txtfnameA.setText("");
-                    txtlnameA.setText("");
-                    lblgenderA.setText("");
-                    txtdobA.setText("");
-                    txtemailA.setText("");
-                    txtadmid.requestFocus();
-
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
-                }
-            }
-        });
-
         //GET DETAILS OF ADMIN (SEARCH)
         btngdetailsA.addActionListener(new ActionListener() {
             @Override
